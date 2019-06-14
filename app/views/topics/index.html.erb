@@ -4,6 +4,9 @@
 </h1>
 <ul>
   <% @topics.each do |topic| %>
-    <li><%= topic.name %></li>
+    <li>
+      <%= link_to topic.name, topic_conversations_url(topic) %>
+      <img src="<%= topic.image %>" style="height: 150px" />
+    </li>
   <% end %>
 </ul>
