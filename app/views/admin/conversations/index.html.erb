@@ -14,5 +14,7 @@
 <ul>
   <% @conversations.each do |c| %>
     <li><%= c.title %></li>
+    <%= button_to 'Delete', admin_topic_conversation_url(@topic, c), :method => :delete %>
   <% end %>
+
 </ul>

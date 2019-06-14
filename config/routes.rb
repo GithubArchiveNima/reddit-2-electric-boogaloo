@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
   
   namespace 'admin' do
-    resources :topics
+    resources :topics do
+      resources :conversations
+    end
   end
   # get /topics/:id/conversation => conversations/index
 

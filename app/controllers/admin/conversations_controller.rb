@@ -1,4 +1,5 @@
-class ConversationsController < ApplicationController
+class Admin::ConversationsController < ApplicationController
+  # do whatever you want in here
   def index
     topic_id = params['topic_id']
     # req.params.topic_id
@@ -7,12 +8,12 @@ class ConversationsController < ApplicationController
     # @conversations = Conversation.where(topic: @topic)
     @conversations = @topic.conversations
 
-
   end
 
-  def create
-    @topic = Topic.find(params['topic_id'])
-    @topic.conversations.create title: params['conversation']['title']
+  def destroy
+    @conversation = Conversation.find(params[:id])
+
+    @conversation.destroy
 
     redirect_to topics_path
   end
