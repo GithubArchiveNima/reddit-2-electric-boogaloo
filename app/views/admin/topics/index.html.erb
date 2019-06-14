@@ -1,0 +1,13 @@
+
+<h1>
+  Topics! AS AN ADMIN!!!! ⚡️
+</h1>
+<ul>
+  <% @topics.each do |topic| %>
+    <li>
+      <%= link_to topic.name, topic_conversations_url(topic) %>
+      <img src="<%= topic.image %>" style="height: 150px" />
+      <%= button_to 'Delete ' + topic.name, admin_topic_url(topic), :method => :delete %>
+    </li>
+  <% end %>
+</ul>

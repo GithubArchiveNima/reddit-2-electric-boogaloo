@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :topics do
     resources :conversations
   end
-
+  
+  namespace 'admin' do
+    resources :topics
+  end
   # get /topics/:id/conversation => conversations/index
 
 end
