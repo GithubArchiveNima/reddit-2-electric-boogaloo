@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
     # req.params.topic_id
     @topic = Topic.find(topic_id)
 
-    # @conversations = Conversation.find_by(topic: topic)
+    @conversations = Conversation.where(topic: @topic)
 
   end
 
