@@ -3,5 +3,10 @@ Rails.application.routes.draw do
 
   # get /topics => topic/index
 
-  resources :topics
+  resources :topics do
+    resources :conversations
+  end
+
+  # get /topics/:id/conversation => conversations/index
+
 end
